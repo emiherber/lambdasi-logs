@@ -64,3 +64,10 @@ Los logs se guardan en la carpeta **lamlogs**.
 ├── proyecto
 │   ├── lamlogs
 ```
+
+### Licencia:
+
+Esta librería se distribuye bajo la licencia The Unlicense. Puedes encontrar el texto completo de la licencia en el archivo LICENSE.
+
+### Autores
+[Emiliano Herber](https://github.com/emiherber)
