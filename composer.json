@@ -1,0 +1,19 @@
+{
+  "name": "emiherber/lambdasi-logs",
+  "description": "Permite generar archivos logs de nuestra aplicación",
+  "type": "library",
+  "license": "unlicense",
+  "autoload": {
+    "psr-4": {
+      "Emiherber\\LambdasiLogs\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "emiliano herber"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  }
+}
