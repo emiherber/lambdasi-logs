@@ -13,6 +13,12 @@
       "name": "emiliano herber"
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "support": {
+    "issues": "https://github.com/emiherber/lambdasi-logs/issues",
+    "source": "https://github.com/emiherber/lambdasi-logs"
+  },
   "require": {
     "php": ">=7.0"
   }
