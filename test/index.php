@@ -21,9 +21,9 @@ function test() {
       'clave' => 'valor',
       'clave2' => 'valor2'
     ];
-  
+
     throw new Exception('prueba');
-  
+
   } catch (\Throwable $th) {
     ErrorLog::log('prueba', $th->getMessage(), $valores, new Exception('prueba'));
   }
