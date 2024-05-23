@@ -1,0 +1,9 @@
+version: '3.10'
+services:
+  php-apache-environment:
+    build: .
+    container_name: lambdasi-logs
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 80:80
