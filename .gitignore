@@ -1,3 +1,4 @@
 /vendor/
 .vscode/*
 /lamlogs/
+php.sh
