@@ -1,7 +1,9 @@
 <?php
 
 namespace Emiherber\LambdasiLogs;
+use Error;
 use Exception;
+use Throwable;
 
 abstract class ErrorLog
 {
@@ -11,13 +13,15 @@ abstract class ErrorLog
    * @param string $nombreArchivo El nombre del archivo de registro.
    * @param string $texto El mensaje de error que se va a registrar.
    * @param array $valores Array opcional de valores que se van a registrar.
-   * @param Exception|null $exception Objeto de excepción opcional que se va a registrar.
+   * @param Throwable|null $throwable Objeto de excepción opcional que se va a registrar.
    * @throws None
    * @return void
    */
-  static function log(string $nombreArchivo, string $texto, array $valores = [], Exception $exception = null)
+  static function log(string $nombreArchivo, string $texto, array $valores = [], Throwable $throwable = null)
   {
-    if (!file_exists(__DR__ . "lamlogs")) {
+    // var_dump(is_dir(__DR__ . "lamlogs"));
+    // die(__DR__ . "lamlogs");
+    if (!is_dir(__DR__ . "lamlogs")) {
       mkdir(__DR__ . "lamlogs");
     }
 
@@ -36,8 +40,12 @@ abstract class ErrorLog
       ob_end_clean();
     }
 
-    if ($exception instanceof Exception) {
-      fputs($file, "\r\nException: (" . $exception->getCode() . ") " . $exception->getMessage() . "\r\ntrace:\r\n" . $exception->getTraceAsString() . "\r\n");
+    if ($throwable instanceof Exception) {
+      fputs($file, "\r\nException: (" . $throwable->getCode() . ") " . $throwable->getMessage() . "\r\ntrace:\r\n" . $throwable->getTraceAsString() . "\r\n");
+    }
+
+    if ($throwable instanceof Error) {
+      fputs($file, "\r\nError: (" . $throwable->getCode() . ") " . $throwable->getMessage() . "\r\ntrace:\r\n" . $throwable->getTraceAsString() . "\r\n");
     }
 
     fclose($file);

@@ -2,3 +2,6 @@
 .vscode/*
 /lamlogs/
 php.sh
+apacheLog/access.log
+apacheLog/error.log
+apacheLog/other_vhosts_access.log

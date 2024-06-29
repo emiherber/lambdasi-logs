@@ -3,7 +3,7 @@
 use Emiherber\LambdasiLogs\ErrorLog;
 require '../vendor/autoload.php';
 
-define('__DR__', $_SERVER['DOCUMENT_ROOT'].'/lambdasi-logs/');
+define('__DR__', $_SERVER['DOCUMENT_ROOT'].'/');
 
 try {
   test();
@@ -25,6 +25,8 @@ function test() {
     throw new Exception('prueba');
 
   } catch (\Throwable $th) {
-    ErrorLog::log('prueba', $th->getMessage(), $valores, new Exception('prueba'));
+    ErrorLog::log('Throwable', $th->getMessage(), $valores, $th);
+    ErrorLog::log('Exception', $th->getMessage(), $valores, new Exception('Exception'));
+    ErrorLog::log('Error', $th->getMessage(), $valores, new Error('Error'));
   }
 }
