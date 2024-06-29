@@ -13,7 +13,7 @@ composer require emiherber/lambdasi-logs
 ## Uso
 ErrorLog::log($nombreArchivo, $texto, $valores, $exception);
 
-- $nombreArchivo: 
+- $nombreArchivo:
   - Obligatorio
   - Indica con que nombre se guardara el log. A este nombre se le adhiere como sufijo la fecha y hora.
 - $texto:
@@ -22,9 +22,9 @@ ErrorLog::log($nombreArchivo, $texto, $valores, $exception);
 - $valores:
   - Opcional
   - Se puede pasar un array con los parametros que generaron el log.
-- $exception:
+- $throwable:
   - Opcional
-  - Se puede pasar una excepción con la se genero el log.
+  - Se puede pasar un throwable con la se genero el log.
 
 ```PHP
 require __DIR__.'/vendor/autoload.php';
@@ -48,9 +48,9 @@ function test() {
       'clave' => 'valor',
       'clave2' => 'valor2'
     ];
-  
+
     throw new Exception('prueba');
-  
+
   } catch (\Throwable $th) {
     ErrorLog::log('prueba', $th->getMessage(), $valores, new Exception('prueba'));
   }
