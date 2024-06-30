@@ -24,7 +24,7 @@ ErrorLog::log($nombreArchivo, $texto, $valores, $exception);
   - Se puede pasar un array con los parametros que generaron el log.
 - $throwable:
   - Opcional
-  - Se puede pasar un throwable con la se genero el log.
+  - Se puede pasar un throwable con la que se genero el log.
 
 ```PHP
 require __DIR__.'/vendor/autoload.php';
