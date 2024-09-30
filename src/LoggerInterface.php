@@ -14,10 +14,9 @@ interface LoggerInterface
   function emergency(string $message, array $context = []);
 
   /**
-   * Action must be taken immediately.
-   *
-   * Example: Entire website down, database unavailable, etc. This should
-   * trigger the SMS alerts and wake you up.
+   * El método emergency se utiliza para indicar situaciones que requieren atención inmediata.
+   * Se pueden utilizar ejemplos como un sitio web completo caido, una base de datos no disponible, etc.
+   * Este método desencadenará las alertas por SMS y despertará al usuario.
    *
    * @param string $message
    * @param array $context
@@ -26,9 +25,9 @@ interface LoggerInterface
   function alert(string $message, array $context = []);
 
   /**
-   * Critical conditions.
+   * Condiciones críticas.
    *
-   * Example: Application component unavailable, unexpected exception.
+   * Ejemplo: Componente de aplicación no disponible, excepción inesperada.
    *
    * @param string $message
    * @param array $context
@@ -37,8 +36,8 @@ interface LoggerInterface
   function critical(string $message, array $context = []);
 
   /**
-   * Runtime errors that do not require immediate action but should typically
-   * be logged and monitored.
+   * Errores de tiempo de ejecución que no requieren una acción inmediata
+   * pero que normalmente deben registrarse y monitorearse.
    *
    * @param string $message
    * @param array $context
@@ -47,10 +46,10 @@ interface LoggerInterface
   function error(string $message, array $context = []);
 
   /**
-   * Exceptional occurrences that are not errors.
+   * Sucesos excepcionales que no son errores.
    *
-   * Example: Use of deprecated APIs, poor use of an API, undesirable things
-   * that are not necessarily wrong.
+   * Ejemplo: uso de API obsoletas, uso deficiente de una API,
+   * cosas indeseables que no necesariamente son incorrectas.
    *
    * @param string $message
    * @param array $context
@@ -59,7 +58,7 @@ interface LoggerInterface
   function warning(string $message, array $context = []);
 
   /**
-   * Normal but significant events.
+   * Eventos normales pero significativos.
    *
    * @param string $message
    * @param array $context
@@ -68,9 +67,9 @@ interface LoggerInterface
   function notice(string $message, array $context = []);
 
   /**
-   * Interesting events.
+   * Eventos interesantes.
    *
-   * Example: User logs in, SQL logs.
+   * Ejemplo: inicios de sesión de usuario, registros SQL.
    *
    * @param string $message
    * @param array $context
@@ -79,7 +78,7 @@ interface LoggerInterface
   function info(string $message, array $context = []);
 
   /**
-   * Detailed debug information.
+   * Información de depuración detallada.
    *
    * @param string $message
    * @param array $context
@@ -88,7 +87,7 @@ interface LoggerInterface
   function debug(string $message, array $context = []);
 
   /**
-   * Logs with an arbitrary level.
+   * Registros con un nivel arbitrario.
    *
    * @param mixed $level
    * @param string $message

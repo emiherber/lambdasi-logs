@@ -17,13 +17,11 @@ class Logger extends AbstractLogger
    */
   function log(string $level, string $message, array $context = [])
   {
-
     $object = new ReflectionClass(LogLevel::class);
 
     if (!in_array($level, $object->getConstants())) {
       throw new InvalidArgumentException('Level no valido', 500);
     }
-
 
     if (!is_dir(__DR__ . "lamlogs")) {
       mkdir(__DR__ . "lamlogs");

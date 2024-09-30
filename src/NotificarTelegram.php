@@ -12,9 +12,9 @@ class NotificarTelegram implements NotificarInterface
 
   function __construct()
   {
-    $this->urlApi = 'https://api.telegram.org/bot' . $_ENV['TOKEN'];
-    $this->tituloSistema = isset($_ENV['TITULOSISTEMA']) ? $_ENV['TITULOSISTEMA'] :'Lambdasi Logs';
-    $this->chatId = $_ENV['CHATID'];
+    $this->urlApi = 'https://api.telegram.org/bot' . TOKEN;
+    $this->tituloSistema = TITULOSISTEMA;
+    $this->chatId = CHATID;
   }
 
   function notificar(string $mensaje)

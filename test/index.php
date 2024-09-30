@@ -5,21 +5,25 @@ use Emiherber\LambdasiLogs\Logger;
 use Emiherber\LambdasiLogs\LogLevel;
 use Symfony\Component\Dotenv\Dotenv;
 
-define('__DR__', $_SERVER['DOCUMENT_ROOT'].'/');
+define('__DR__', $_SERVER['DOCUMENT_ROOT'] . '/');
 
 $dotenv = new Dotenv();
 $dotenv->load('.env');
 
+define('TOKEN', $_ENV['TOKEN']);
+define('CHATID', $_ENV['CHATID']);
+define('TITULOSISTEMA', isset($_ENV['TITULOSISTEMA']) ? $_ENV['TITULOSISTEMA'] : 'Lambdasi Logs');
+
 try {
   test();
   echo 'log generado <br>';
-
 } catch (\Throwable $th) {
   echo 'error al generar el log <br>';
   throw $th;
 }
 
-function test() {
+function test()
+{
   try {
 
     $valores = [
@@ -28,12 +32,12 @@ function test() {
     ];
 
     throw new Exception('prueba2');
-
   } catch (\Throwable $th) {
     $log = new Logger();
-    $log->log(LogLevel::DEBUG,'test', compact('th'));
-    $log->log(LogLevel::ERROR,'test', ['th' => new Error('Error')]);
-    $log->log(LogLevel::WARNING,$th->getMessage(), ['th' => new Exception('Exception')]);
+    $log->log(LogLevel::DEBUG, 'test', compact('th'));
+    $log->log(LogLevel::ERROR, 'test', ['th' => new Error('Error')]);
+    $log->log(LogLevel::WARNING, $th->getMessage(), ['th' => new Exception('Exception')]);
+    $log->warning($th->getMessage(), ['th' => new Exception('Exception')]);
     $log->alert($th->getMessage());
   }
 }

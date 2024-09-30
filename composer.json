@@ -20,7 +20,9 @@
     "source": "https://github.com/emiherber/lambdasi-logs"
   },
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.2"
+  },
+  "require-dev": {
     "symfony/dotenv": "^7.1"
   }
 }
