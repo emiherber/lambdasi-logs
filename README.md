@@ -30,7 +30,7 @@ $log->log(string $level, string $message, array $context = []);
   - TITULOSISTEMA: Aplicación desde donde se genera la notificación. Ideal si el mismo bot se usa para varias aplicaciones.
 En caso que no funcione algo se genera un archivo llamado un log del *tipo debug-Ymd.log*
 
-## Opción 1:
+## Ejemplo:
 ```PHP
 require __DIR__.'/vendor/autoload.php';
 use Emiherber\LambdasiLogs\Logger;
