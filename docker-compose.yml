@@ -1,11 +1,10 @@
-version: '3.10'
+version: "3.3"
 services:
   php-apache-environment:
-    image: emiherber/php8.2-sql-server
+    image: docker.io/emiherber/php8.2-sql-server
     container_name: lambdasi-logs
     volumes:
-#      - ./:/var/www/html/
-      - /mnt/Disco Externo/Desarrollos LambdaSI/lambdasi-logs:/var/www/html/
-      - /mnt/Disco Externo/Desarrollos LambdaSI/lambdasi-logs/apacheLog:/var/log/apache2/
+      #      - ./:/var/www/html/
+      - /opt/desarrollo_lambdasi/lambdasi-logs:/var/www/html/
     ports:
       - 80:80

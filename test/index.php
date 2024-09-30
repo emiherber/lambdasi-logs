@@ -1,9 +1,14 @@
 <?php
-
-use Emiherber\LambdasiLogs\ErrorLog;
 require '../vendor/autoload.php';
 
+use Emiherber\LambdasiLogs\Logger;
+use Emiherber\LambdasiLogs\LogLevel;
+use Symfony\Component\Dotenv\Dotenv;
+
 define('__DR__', $_SERVER['DOCUMENT_ROOT'].'/');
+
+$dotenv = new Dotenv();
+$dotenv->load('.env');
 
 try {
   test();
@@ -22,11 +27,13 @@ function test() {
       'clave2' => 'valor2'
     ];
 
-    throw new Exception('prueba');
+    throw new Exception('prueba2');
 
   } catch (\Throwable $th) {
-    ErrorLog::log('Throwable', $th->getMessage(), $valores, $th);
-    ErrorLog::log('Exception', $th->getMessage(), $valores, new Exception('Exception'));
-    ErrorLog::log('Error', $th->getMessage(), $valores, new Error('Error'));
+    $log = new Logger();
+    $log->log(LogLevel::DEBUG,'test', compact('th'));
+    $log->log(LogLevel::ERROR,'test', ['th' => new Error('Error')]);
+    $log->log(LogLevel::WARNING,$th->getMessage(), ['th' => new Exception('Exception')]);
+    $log->alert($th->getMessage());
   }
 }

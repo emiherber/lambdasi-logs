@@ -4,29 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ab65275b59ad3a621d8eef7face5fa9",
+    "content-hash": "881a752c4b7ce21ce79c8e07148214f9",
     "packages": [
         {
-            "name": "afipsdk/afip.php",
-            "version": "v1.1.1",
+            "name": "symfony/dotenv",
+            "version": "v7.1.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/AfipSDK/afip.php.git",
-                "reference": "deb1e2cd9c8909832e80d77301e82e6e67cc0642"
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "6d966200b399fa59759286f3fc7c919f0677c449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AfipSDK/afip.php/zipball/deb1e2cd9c8909832e80d77301e82e6e67cc0642",
-                "reference": "deb1e2cd9c8909832e80d77301e82e6e67cc0642",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/6d966200b399fa59759286f3fc7c919f0677c449",
+                "reference": "6d966200b399fa59759286f3fc7c919f0677c449",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=8.2"
+            },
+            "conflict": {
+                "symfony/console": "<6.4",
+                "symfony/process": "<6.4"
+            },
+            "require-dev": {
+                "symfony/console": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0"
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "src/Afip.php"
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -35,27 +46,39 @@
             ],
             "authors": [
                 {
-                    "name": "Afip SDK",
-                    "email": "afipsdk@gmail.com"
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Libreria para usar los Web Services de AFIP (Argentina) ",
-            "homepage": "https://github.com/afipsdk/afip.php",
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
             "keywords": [
-                "afip",
-                "cae",
-                "contribuyente",
-                "facturacion-electronica",
-                "gratis",
-                "libreria",
-                "padron",
-                "soap"
+                "dotenv",
+                "env",
+                "environment"
             ],
             "support": {
-                "issues": "https://github.com/AfipSDK/afip.php/issues",
-                "source": "https://github.com/AfipSDK/afip.php/tree/v1.1.1"
+                "source": "https://github.com/symfony/dotenv/tree/v7.1.5"
             },
-            "time": "2024-03-22T22:09:02+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-17T09:16:35+00:00"
         }
     ],
     "packages-dev": [],
