@@ -73,10 +73,10 @@ function test() {
 
 ```
 
-::: info
-Para los logs del LogLevel::ALERT se intentara enviar un mensaje a tu chat de Telegram. Si utiliza la forma $log->alert($th->getMessage(),[]); o $log->alert($th->getMessage());.
-Si usa $log->log(LogLevel::ALERT, 'test', compact('th')); solo se genera un archivo y no se envia una alerta.
-:::
+### Atención
+Para los logs del `LogLevel::ALERT` se intentara enviar un mensaje a tu chat de Telegram. Si utiliza la forma `$log->alert($th->getMessage(),[]);` o `$log->alert($th->getMessage());`.
+Si usa `$log->log(LogLevel::ALERT, 'test', compact('th'));` solo se genera un archivo y no se envia una alerta.
+
 
 
 ### Ubicación Log
