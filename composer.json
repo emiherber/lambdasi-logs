@@ -23,6 +23,6 @@
     "php": ">=8.2"
   },
   "require-dev": {
-    "symfony/dotenv": "^7.1"
+    "symfony/dotenv": "^7.2"
   }
 }
