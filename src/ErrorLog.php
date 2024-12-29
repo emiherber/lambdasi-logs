@@ -19,13 +19,11 @@ abstract class ErrorLog
    */
   static function log(string $nombreArchivo, string $texto, array $valores = [], Throwable $throwable = null)
   {
-    // var_dump(is_dir(__DR__ . "lamlogs"));
-    // die(__DR__ . "lamlogs");
     if (!is_dir(__DR__ . "lamlogs")) {
       mkdir(__DR__ . "lamlogs");
     }
 
-    $file = fopen(__DR__ . "lamlogs/" . $nombreArchivo . date("YmdHis") . ".log", "a");
+    $file = fopen(__DR__ . "lamlogs/" . $nombreArchivo . date("Ymd") . ".log", "a");
 
     //Contenido del archivo
     fputs($file, "Error: ");
@@ -47,6 +45,8 @@ abstract class ErrorLog
     if ($throwable instanceof Error) {
       fputs($file, "\r\nError: (" . $throwable->getCode() . ") " . $throwable->getMessage() . "\r\ntrace:\r\n" . $throwable->getTraceAsString() . "\r\n");
     }
+
+    fputs($file, "----------------------------------------------------------------------------------- \r\n");
 
     fclose($file);
   }
