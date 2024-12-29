@@ -20,6 +20,6 @@
     "source": "https://github.com/emiherber/lambdasi-logs"
   },
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.2.5"
   }
 }
