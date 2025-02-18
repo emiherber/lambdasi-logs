@@ -23,6 +23,9 @@ trait LoggerTrait
   {
     try {
       $notificar = new NotificarTelegram();
+
+      $message .= "\nContexto del evento: \n";
+      $message .= "<pre>".print_r($context, true)."</pre>";
       $notificar->notificar($message);
     } catch (\Throwable $th) {
       $this->debug('Error al enviar el mensaje a telegram: '. $th->getMessage(), compact('th'));

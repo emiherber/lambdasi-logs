@@ -5,7 +5,7 @@ namespace Emiherber\LambdasiLogs;
 interface LoggerInterface
 {
   /**
-   * System is unusable.
+   * El sistema no se encuentra disponible.
    *
    * @param string $message
    * @param array $context
@@ -14,7 +14,7 @@ interface LoggerInterface
   function emergency(string $message, array $context = []);
 
   /**
-   * El método emergency se utiliza para indicar situaciones que requieren atención inmediata.
+   * El método alert se utiliza para indicar situaciones que requieren atención inmediata.
    * Se pueden utilizar ejemplos como un sitio web completo caido, una base de datos no disponible, etc.
    * Este método desencadenará las alertas por SMS y despertará al usuario.
    *

@@ -38,6 +38,6 @@ function test()
     $log->log(LogLevel::ERROR, 'test', ['th' => new Error('Error')]);
     $log->log(LogLevel::WARNING, $th->getMessage(), ['th' => new Exception('Exception')]);
     $log->warning($th->getMessage(), ['th' => new Exception('Exception')]);
-    $log->alert($th->getMessage());
+    $log->alert($th->getMessage(),compact('th'));
   }
 }
