@@ -12,9 +12,13 @@ class NotificarTelegram implements NotificarInterface
 
   function __construct()
   {
-    $this->urlApi = 'https://api.telegram.org/bot' . TOKEN ?? 'TOKEN_DE_PRUEBA';
-    $this->tituloSistema = TITULOSISTEMA ?? 'Sistema de Logs';
-    $this->chatId = CHATID ?? 'CHAT_ID_DE_PRUEBA';
+    $this->urlApi = 'https://api.telegram.org/bot';
+    $this->tituloSistema = 'Sistema de Logs';
+    $this->chatId = 'CHAT_ID_DE_PRUEBA';
+
+    if (defined('TOKEN')) { $this->urlApi .= TOKEN; }
+    if (defined('TITULOSISTEMA')) { $this->tituloSistema = TITULOSISTEMA; }
+    if (defined('CHATID')) { $this->chatId = CHATID; }
   }
 
   function notificar(string $mensaje)
@@ -38,9 +42,7 @@ class NotificarTelegram implements NotificarInterface
       if (!$data['ok']) {
         throw new Exception($data['description'], $data['error_code']);
       }
-    } catch (\Throwable $th) {
-      throw $th;
-    }
+    } catch (\Throwable) {}
 
     curl_close($ch);
   }
